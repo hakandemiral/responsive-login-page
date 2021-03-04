@@ -5,9 +5,10 @@ const addClass = ({ target }) => {
   parent.classList.add('focused')
 }
 
-const removeClass = ({ target }) => {
+const removeClass = ({ target, target: { value } }) => {
+  console.log({ value, target })
   const parent = target.closest('.input-area')
-  if (parent.value === "") {
+  if (value === "") {
     parent.classList.remove('focused')
   }
 }
